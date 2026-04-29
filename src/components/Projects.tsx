@@ -71,49 +71,49 @@ const projects: Project[] = [
       "Modular design — swap servos, cameras or mounts easily.",
     ],
   },
-  {
-    id: "rc-tx-rx-8ch",
-    title: "8-Channel 2.4GHz RC Transmitter & Receiver",
-    category: "WIRELESS CONTROL / PRODUCT",
-    status: "DEPLOYED",
-    image: transmitter,
-    short:
-      "Custom-built 8-channel wireless control system for drones and robotics with long-range, low-latency comms.",
-    long:
-      "A high-performance 8-channel 2.4GHz wireless control system engineered for drones, RC vehicles, robotics and industrial IoT. Built around an STM32 microcontroller with NRF24L01 radios, it delivers 500–1000m range, sub-20ms latency, PWM/PPM/SBUS outputs, an LCD operator interface, custom firmware and failsafe protection — all in a compact, engineer-built package designed to be customizable and cost-effective.",
-    tech: ["STM32", "NRF24L01", "2.4 GHz", "SBUS / PPM / PWM", "Custom Firmware"],
-    highlights: [
-      "8 channels",
-      "500–1000 m range",
-      "<20 ms latency",
-      "LCD interface",
-      "Failsafe protection",
-      "Compact design",
-    ],
-    gallery: [
-      { src: transmitter, title: "Transmitter Front View"},
-      { src: receiver, title: "Receiver Board"},
-      { src: robot, title: "Internal PCB"},
-    ],
-    specs: [
-      { label: "MCU", value: "STM32" },
-      { label: "Radio", value: "NRF24L01 + PA/LNA" },
-      { label: "Channels", value: "8" },
-      { label: "Range", value: "500 – 1000 m" },
-      { label: "Latency", value: "< 20 ms" },
-      { label: "Outputs", value: "PWM / PPM / SBUS" },
-    ],
-    applications: [
-      { icon: Plane, title: "Drones / UAVs", desc: "Reliable command link for multirotor and fixed-wing." },
-      { icon: Bot, title: "Robotics", desc: "Teleoperation of ground and crawling robots." },
-      { icon: Radio, title: "Industrial IoT", desc: "Long-range remote control for field equipment." },
-    ],
-    why: [
-      "Engineer-built — every layer from PCB to firmware is in-house.",
-      "Customizable channels, mixing and failsafe logic.",
-      "Cost-effective alternative to commercial 8-channel systems.",
-    ],
-  },
+  // {
+  //   id: "rc-tx-rx-8ch",
+  //   title: "8-Channel 2.4GHz RC Transmitter & Receiver",
+  //   category: "WIRELESS CONTROL / PRODUCT",
+  //   status: "DEPLOYED",
+  //   image: transmitter,
+  //   short:
+  //     "Custom-built 8-channel wireless control system for drones and robotics with long-range, low-latency comms.",
+  //   long:
+  //     "A high-performance 8-channel 2.4GHz wireless control system engineered for drones, RC vehicles, robotics and industrial IoT. Built around an STM32 microcontroller with NRF24L01 radios, it delivers 500–1000m range, sub-20ms latency, PWM/PPM/SBUS outputs, an LCD operator interface, custom firmware and failsafe protection — all in a compact, engineer-built package designed to be customizable and cost-effective.",
+  //   tech: ["STM32", "NRF24L01", "2.4 GHz", "SBUS / PPM / PWM", "Custom Firmware"],
+  //   highlights: [
+  //     "8 channels",
+  //     "500–1000 m range",
+  //     "<20 ms latency",
+  //     "LCD interface",
+  //     "Failsafe protection",
+  //     "Compact design",
+  //   ],
+  //   gallery: [
+  //     { src: transmitter, title: "Transmitter Front View"},
+  //     { src: receiver, title: "Receiver Board"},
+  //     { src: robot, title: "Internal PCB"},
+  //   ],
+  //   specs: [
+  //     { label: "MCU", value: "STM32" },
+  //     { label: "Radio", value: "NRF24L01 + PA/LNA" },
+  //     { label: "Channels", value: "8" },
+  //     { label: "Range", value: "500 – 1000 m" },
+  //     { label: "Latency", value: "< 20 ms" },
+  //     { label: "Outputs", value: "PWM / PPM / SBUS" },
+  //   ],
+  //   applications: [
+  //     { icon: Plane, title: "Drones / UAVs", desc: "Reliable command link for multirotor and fixed-wing." },
+  //     { icon: Bot, title: "Robotics", desc: "Teleoperation of ground and crawling robots." },
+  //     { icon: Radio, title: "Industrial IoT", desc: "Long-range remote control for field equipment." },
+  //   ],
+  //   why: [
+  //     "Engineer-built — every layer from PCB to firmware is in-house.",
+  //     "Customizable channels, mixing and failsafe logic.",
+  //     "Cost-effective alternative to commercial 8-channel systems.",
+  //   ],
+  // },
 ];
 
 const Projects = () => {
