@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { X, ExternalLink, Cpu, Radio, Plane, Bot, Zap, Shield, Wrench, Rocket } from "lucide-react";
 import robot from "@/assets/project-robot.jpg";
-// import fpv from "@/assets/fpv-head-tracking.jpg";
+import fpv from "@/assets/FPV-head-tracking.jpg";
 import motor from "@/assets/micro-servo-motor.jpg";
 import receiver from "@/assets/receiver.jpg";
 import transmitter from "@/assets/transmitter.jpg";
@@ -48,7 +48,7 @@ const projects: Project[] = [
       "Hardware-debugged build",
     ],
     gallery: [
-      // { src: fpv, title: "FPV Head Sensor Setup"},
+      { src: fpv, title: "FPV Head Sensor Setup"},
       { src: transmitter, title: "Transmitter"},
       { src: receiver, title: "Receiver"},
       { src: motor, title: "Micro Servo Motor"}
