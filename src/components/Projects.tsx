@@ -29,92 +29,108 @@ type Project = {
 
 const projects: Project[] = [
   {
-    id: "fpv-head-tracker",
-    title: "FPV Head Tracking System",
-    category: "FPV / IMMERSIVE CONTROL",
+    id: "3-axis-head-tracking-system",
+    title: "3-Axis Head Tracking System",
+    category: "FPV / MOTION CONTROL / EMBEDDED SYSTEM",
     status: "OPERATIONAL",
     image: robot,
     short:
-      "DIY FPV system that maps real-time head movement to camera motion for an immersive pilot-like experience.",
+      "Advanced 3-axis head tracking system that converts real-time human motion into precise control signals for FPV, robotics, and simulation systems.",
     long:
-      "A fully functional FPV Head Tracking System that translates real-time user head motion into precise camera movement, delivering a true first-person immersive experience for drones, RC cars and planes. An IMU mounted to the headset streams orientation data to a microcontroller that drives a 2-axis pan/tilt servo rig holding the FPV camera, with smooth motion mapping and a custom 3D-printed mechanical assembly.",
-    tech: ["IMU Sensors", "Embedded C", "Servo Control", "3D Printing", "FPV"],
+      "A high-performance 3-Axis Head Tracking System designed to translate natural head movements into accurate motion control signals. Built using an STM32 microcontroller and IMU-based motion sensing, the system enables smooth and low-latency tracking across yaw, pitch, and roll axes. Sensor fusion algorithms ensure stable angle estimation with minimal drift, while custom embedded firmware processes real-time data for responsive output. The system supports PWM, PPM, and SBUS outputs, making it highly compatible with RC transmitters, drone gimbals, robotics platforms, and simulation systems. Its lightweight, wearable design and compact PCB make it ideal for immersive control applications.",
+    tech: [
+      "STM32",
+      "IMU Sensors",
+      "Embedded C",
+      "Sensor Fusion",
+      "PWM / PPM / SBUS",
+      "PCB Design"
+    ],
     highlights: [
-      "Head-tracked pan & tilt",
-      "2-axis servo gimbal",
-      "Custom 3D-printed rig",
-      "Real-time motion mapping",
-      "RC / drone / plane ready",
-      "Hardware-debugged build",
+      "Full 3-axis tracking (Yaw, Pitch, Roll)",
+      "High precision IMU-based motion sensing",
+      "Low latency real-time response",
+      "Multi-output support (PWM, PPM, SBUS)",
+      "Wearable and lightweight design",
+      "Custom embedded firmware system",
     ],
     gallery: [
-      { src: fpv, title: "FPV Head Sensor Setup"},
-      { src: transmitter, title: "Transmitter"},
-      { src: receiver, title: "Receiver"},
-      { src: motor, title: "Micro Servo Motor"}
+      { src: fpv, title: "Head Tracking Sensor Module" },
+      { src: motor, title: "Servo / Gimbal Movement Setup" }
     ],
     specs: [
-      { label: "Axes", value: "2 (Pan + Tilt)" },
-      { label: "Sensor", value: "9-DoF IMU" },
-      { label: "Update Rate", value: "100 Hz" },
-      { label: "Latency", value: "< 25 ms" },
-      { label: "Mount", value: "3D Printed PLA+" },
-      { label: "Compatibility", value: "FPV / RC / Drone" },
+      { label: "Tracking Axes", value: "3 (Yaw, Pitch, Roll)" },
+      { label: "Controller", value: "STM32 MCU" },
+      { label: "Sensor", value: "IMU (Gyroscope + Accelerometer)" },
+      { label: "Outputs", value: "PWM / PPM / SBUS" },
+      { label: "Latency", value: "Low latency response" },
+      { label: "Power", value: "Rechargeable Battery / DC Supply" },
     ],
     applications: [
-      { icon: Plane, title: "Drones", desc: "Immersive aerial cinematography and inspection." },
-      { icon: Bot, title: "RC Vehicles", desc: "First-person driving for cars, tanks, rovers." },
-      { icon: Rocket, title: "Fixed-Wing", desc: "Look-around cockpit view for RC planes." },
+      { icon: Plane, title: "FPV Systems", desc: "Immersive camera control for drones and RC aircraft." },
+      { icon: Bot, title: "Robotics", desc: "Real-time head-based control for robot vision systems." },
+      { icon: Rocket, title: "Simulation", desc: "Enhanced realism in flight and racing simulators." },
     ],
     why: [
-      "End-to-end engineered: sensor fusion, firmware and mechanics all custom.",
-      "Sub-25ms motion-to-camera latency for natural feel.",
-      "Modular design — swap servos, cameras or mounts easily.",
+      "Provides natural hands-free control for camera and gimbal systems.",
+      "Full 3-axis motion tracking for realistic and immersive experience.",
+      "Low latency ensures smooth and responsive control output.",
+      "Compatible with drones, robotics, and simulation platforms.",
+      "Upgradeable architecture with future wireless and smart features.",
     ],
   },
-  // {
-  //   id: "rc-tx-rx-8ch",
-  //   title: "8-Channel 2.4GHz RC Transmitter & Receiver",
-  //   category: "WIRELESS CONTROL / PRODUCT",
-  //   status: "DEPLOYED",
-  //   image: transmitter,
-  //   short:
-  //     "Custom-built 8-channel wireless control system for drones and robotics with long-range, low-latency comms.",
-  //   long:
-  //     "A high-performance 8-channel 2.4GHz wireless control system engineered for drones, RC vehicles, robotics and industrial IoT. Built around an STM32 microcontroller with NRF24L01 radios, it delivers 500–1000m range, sub-20ms latency, PWM/PPM/SBUS outputs, an LCD operator interface, custom firmware and failsafe protection — all in a compact, engineer-built package designed to be customizable and cost-effective.",
-  //   tech: ["STM32", "NRF24L01", "2.4 GHz", "SBUS / PPM / PWM", "Custom Firmware"],
-  //   highlights: [
-  //     "8 channels",
-  //     "500–1000 m range",
-  //     "<20 ms latency",
-  //     "LCD interface",
-  //     "Failsafe protection",
-  //     "Compact design",
-  //   ],
-  //   gallery: [
-  //     { src: transmitter, title: "Transmitter Front View"},
-  //     { src: receiver, title: "Receiver Board"},
-  //     { src: robot, title: "Internal PCB"},
-  //   ],
-  //   specs: [
-  //     { label: "MCU", value: "STM32" },
-  //     { label: "Radio", value: "NRF24L01 + PA/LNA" },
-  //     { label: "Channels", value: "8" },
-  //     { label: "Range", value: "500 – 1000 m" },
-  //     { label: "Latency", value: "< 20 ms" },
-  //     { label: "Outputs", value: "PWM / PPM / SBUS" },
-  //   ],
-  //   applications: [
-  //     { icon: Plane, title: "Drones / UAVs", desc: "Reliable command link for multirotor and fixed-wing." },
-  //     { icon: Bot, title: "Robotics", desc: "Teleoperation of ground and crawling robots." },
-  //     { icon: Radio, title: "Industrial IoT", desc: "Long-range remote control for field equipment." },
-  //   ],
-  //   why: [
-  //     "Engineer-built — every layer from PCB to firmware is in-house.",
-  //     "Customizable channels, mixing and failsafe logic.",
-  //     "Cost-effective alternative to commercial 8-channel systems.",
-  //   ],
-  // },
+  {
+    id: "8ch-rc-transmitter-receiver",
+    title: "8-Channel 2.4GHz RC Transmitter & Receiver",
+    category: "RC SYSTEM / WIRELESS CONTROL / EMBEDDED",
+    status: "OPERATIONAL",
+    image: transmitter,
+    short:
+      "Custom-built 8-channel wireless control system with low-latency communication for drones, robotics, and RC applications.",
+    long:
+      "A high-performance 8-Channel RC Transmitter & Receiver System engineered using STM32 and NRF24L01 wireless communication. Designed for stable, long-range, and low-latency control, the system supports multiple output protocols including PWM, PPM, and SBUS. It features a custom embedded firmware architecture, LCD interface for real-time monitoring, and advanced safety features like failsafe protection and secure binding. The modular and upgradeable design makes it suitable for drones, robotics, industrial control, and research applications.",
+    tech: [
+      "STM32",
+      "NRF24L01",
+      "Embedded C",
+      "Wireless Communication",
+      "PWM / PPM / SBUS",
+      "PCB Design"
+    ],
+    highlights: [
+      "8 fully functional control channels",
+      "2.4GHz NRF24L01 wireless communication",
+      "Low latency real-time control",
+      "Multi-protocol support (PWM, PPM, SBUS)",
+      "Failsafe and secure binding system",
+      "Custom firmware and upgradeable design",
+    ],
+    gallery: [
+      { src: transmitter, title: "Transmitter Front View" },
+      { src: receiver, title: "Receiver Module" }
+    ],
+    specs: [
+      { label: "Channels", value: "8" },
+      { label: "Frequency", value: "2.4 GHz" },
+      { label: "Controller", value: "STM32 MCU" },
+      { label: "Communication", value: "NRF24L01" },
+      { label: "Outputs", value: "PWM / PPM / SBUS" },
+      { label: "Power", value: "Rechargeable Battery" },
+    ],
+    applications: [
+      { icon: Plane, title: "RC Systems", desc: "Control for aircraft, cars, boats, and helicopters." },
+      { icon: Bot, title: "Robotics", desc: "Wireless control for robots and automation systems." },
+      { icon: Rocket, title: "Drones", desc: "Reliable control for multirotor and FPV drone systems." },
+    ],
+    why: [
+      "Multi-purpose system supporting drones, RC vehicles, and robotics.",
+      "8 channels enable advanced control features and expansions.",
+      "Supports PWM, PPM, and SBUS for wide compatibility.",
+      "Reliable 2.4GHz wireless link with low latency.",
+      "Upgradeable firmware and customizable hardware design.",
+      "Cost-effective alternative to commercial RC systems.",
+    ],
+  }
 ];
 
 const Projects = () => {
