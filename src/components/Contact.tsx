@@ -2,6 +2,7 @@ import { useState, FormEvent } from "react";
 import { Send, Mail, MapPin, Github, Linkedin } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
+import emailjs from "@emailjs/browser";
 
 const schema = z.object({
   name: z.string().trim().nonempty({ message: "Name is required" }).max(100),
@@ -38,33 +39,61 @@ const Contact = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const fd = new FormData(e.currentTarget);
+
     const data = {
       name: String(fd.get("name") || ""),
       email: String(fd.get("email") || ""),
       interest: String(fd.get("interest") || ""),
       message: String(fd.get("message") || ""),
     };
+
     const res = schema.safeParse(data);
+
     if (!res.success) {
       const errs: Record<string, string> = {};
-      res.error.issues.forEach((i) => (errs[String(i.path[0])] = i.message));
+
+      res.error.issues.forEach((i) => {
+        errs[String(i.path[0])] = i.message;
+      });
+
       setErrors(errs);
       return;
     }
+
     setErrors({});
     setLoading(true);
 
-    // Placeholder: ready for EmailJS integration
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: data.name,
+          from_email: data.email,
+          interest: data.interest,
+          message: data.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
       toast.success("Transmission received", {
-        description: "I'll get back to you shortly. (Connect EmailJS to enable live sending.)",
+        description: "Your message has been sent successfully.",
       });
+
       (e.target as HTMLFormElement).reset();
-    }, 900);
+    } catch (error) {
+      console.error(error);
+
+      toast.error("Transmission failed", {
+        description: "Something went wrong. Please try again.",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
