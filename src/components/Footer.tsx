@@ -3,7 +3,7 @@ import { Mail, Instagram, MessageCircle, YoutubeIcon } from "lucide-react";
 const socials = [
   {
     label: "WhatsApp",
-    href: "https://wa.me/9174080 96838",
+    href: "https://wa.me/917408096838?text=Hi%20MechCircuits%2C%20I%20visited%20your%20website.",
     icon: MessageCircle,
   },
   {
