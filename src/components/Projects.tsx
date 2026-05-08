@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { X, ExternalLink, Cpu, Radio, Plane, Bot, Zap, Shield, Wrench, Rocket } from "lucide-react";
-// import fpv from "@/assets/FPV-head-tracking.jpg";
-import fpv from "@/assets/fpv-head-tracking.jpg";
+import fpv from "@/assets/FPV-head-tracking.jpg";
+// import fpv from "@/assets/fpv-head-tracking.jpg";
 import robot from "@/assets/project-robot.jpg";
 import motor from "@/assets/micro-servo-motor.jpg";
 import receiver from "@/assets/receiver.jpg";
